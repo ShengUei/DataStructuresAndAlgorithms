@@ -27,5 +27,19 @@ public class RunApplication {
 
         testLinkedList.show();
 
+        System.out.println("");
+        System.out.println("============================================");
+
+        testLinkedList.insertAt(2, 100);
+
+        testLinkedList.show();
+
+        System.out.println("");
+        System.out.println("============================================");
+
+        testLinkedList.deleteAt(2);
+
+        testLinkedList.show();
+
     }
 }

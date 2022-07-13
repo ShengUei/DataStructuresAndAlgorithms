@@ -13,6 +13,25 @@ public class LinkedList<E> implements List<E> {
     }
 
     @Override
+    public void insertAt(int index, E e) {
+        int pointer = 0;
+        Node<E> currentNode = head;
+        Node<E> newNode = new Node<>(e);
+
+        if(!isEmpty()) {
+            while(pointer < index) {
+                currentNode = currentNode.next;
+                pointer++;
+            }
+
+            newNode.next = currentNode.next;
+            currentNode.next = newNode;
+        } else {
+            insertFirst(e);
+        }
+    }
+
+    @Override
     public void insertFirst(E e) {
         Node<E> newNode = new Node<>(e);
 
@@ -34,6 +53,20 @@ public class LinkedList<E> implements List<E> {
             }
         }
         currentNode.next = newNode;
+    }
+
+    @Override
+    public void deleteAt(int index) {
+        int pointer = 0;
+        Node<E> currentNode = head.next;
+
+        if(!isEmpty()) {
+            while (pointer < index - 1) {
+                currentNode = currentNode.next;
+                pointer++;
+            }
+            currentNode.next = currentNode.next.next;
+        }
     }
 
     @Override
