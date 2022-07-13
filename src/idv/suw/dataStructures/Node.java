@@ -17,8 +17,8 @@ public class Node<E> {
 
     @Override
     public String toString() {
-        return "Node{" +
-                "item=" + item +
-                '}';
+        return " Node { " +
+                "item = " + item +
+                " }";
     }
 }
