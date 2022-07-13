@@ -45,7 +45,11 @@ public class ArrayList<E> implements List<E>{
 
     @Override
     public void deleteAt(int index) {
-
+        if(!isEmpty()) {
+            for(int i = index; i <= lastIndex; i++) {
+                arrayList[i] = arrayList[i + 1];
+            }
+        }
     }
 
     @Override
